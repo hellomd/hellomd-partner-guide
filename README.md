@@ -1,9 +1,9 @@
 # HelloMD Partner Guide
-A guide to integrating to HelloMD as a Partner
+A guide to integrating with HelloMD as a Partner.
 
 ## Pre-requisites
 In order to follow this guide you need to be a partner with HelloMD and have your PartnerId, ApiKey, ApiSecret and setup a CallbackURL.
-For more information on partnerships feel free to [contact us](mailto:info@hellomd.com).
+For more information on partnerships feel free to [contact us](mailto:api@hellomd.com).
 
 ## How request a patient's info
 1. Redirect your user to https://www.hellomd.com/collectives/YOUR_PARTNER_ID/association
