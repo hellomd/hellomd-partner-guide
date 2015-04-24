@@ -12,4 +12,4 @@ For more information on partnerships feel free to [contact us](mailto:api@hellom
 4. Connect to our API using one of our clients to get the patient information 
 
 ## API clients
-1. [NodeJS](https://github.com/hellomd/hellomd-nodejs-api)
+1. [NodeJS](https://github.com/hellomd/hellomd-api-nodejs)
