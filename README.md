@@ -1,4 +1,4 @@
-# HelloMD Partner Guide
+# HelloMD Partner Integration Guide
 A guide to integrating with HelloMD as a Partner.
 
 ## Pre-requisites
