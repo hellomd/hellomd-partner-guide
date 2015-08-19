@@ -1,3 +1,4 @@
+``` javascript
 // Recommendation active
 {  
    "user":{  
@@ -124,3 +125,4 @@
       "id":"55d28c2d6d61636fa90a0000",
    }
 }
+```
