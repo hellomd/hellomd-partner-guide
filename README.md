@@ -59,3 +59,29 @@ GET /api/v1/users/55d28c2d6d61636fa90a0000
    }
 }
 ```
+
+## How to prepopulate the patient's registration form
+If you already have some of the patient's information. You can use it the prepopulate your HelloMD registration form with the data, by passing us a urlsafe base64 encoded  json in a parameter called "preset". For example(in ruby):
+
+``` ruby
+user_data = {
+   "first_name": "John",
+   "last_name": "Smith",
+   "email": "jsmith@example.com",
+   "phone": "1-999-999-9999",
+   "address_1": "100 8th Street",
+   "address_2": "Apt210",
+   "zipcode": 94101,
+   "gender": "Male"
+}
+user_data_json = JSON.dump(user_data)
+preset = Base64.urlsafe_encode64(user_data_json)
+p preset
+# outputs: eyJmaXJzdF9uYW1lIjoiSm9obiIsImxhc3RfbmFtZSI6IlNtaXRoIiwiZW1haWwiOiJqc21pdGhAZXhhbXBsZS5jb20iLCJwaG9uZSI6IjEtOTk5LTk5OS05OTk5IiwiYWRkcmVzc18xIjoiMTAwIDh0aCBTdHJlZXQiLCJhZGRyZXNzXzIiOiJBcHQyMTAiLCJ6aXBjb2RlIjo5NDEwMSwiZ2VuZGVyIjoiTWFsZSJ9
+```
+
+Then when redirecting the patient include the preset on the URL, as follows:
+
+https://YOUR_PARTNER_URL.hellomd.com/signup?preset=eyJmaXJzdF9uYW1lIjoiSm9obiIsImxhc3RfbmFtZSI6IlNtaXRoIiwiZW1haWwiOiJqc21pdGhAZXhhbXBsZS5jb20iLCJwaG9uZSI6IjEtOTk5LTk5OS05OTk5IiwiYWRkcmVzc18xIjoiMTAwIDh0aCBTdHJlZXQiLCJhZGRyZXNzXzIiOiJBcHQyMTAiLCJ6aXBjb2RlIjo5NDEwMSwiZ2VuZGVyIjoiTWFsZSJ9
+
+
