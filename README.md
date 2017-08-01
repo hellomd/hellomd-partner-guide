@@ -13,7 +13,9 @@ You have patients that don't yet have a medical marijuana card and want to adqui
 2. We will process the patient and emit the recommendation
 3. The user will be asked to share his/her information with you.
 4. After agreeing to share, the user will be asked to go back to your website with a link to a predefined callback URL to your website. Example: https://example.com/hellomd-callback?user_id=USER_ID
-5. Use our API endpoint to recover that patient's information, at `https://www.hellomd.com`.
+5. Use our API endpoint to recover that patient's information, at `https://www.hellomd.com`
+
+> Be sure to set the `accept` header to expect `application/json` otherwise you will receive a `406` error.
 
 ## API Authentication
 Use basic http auth over ssl. ApiKey as username and ApiSecret as password.
