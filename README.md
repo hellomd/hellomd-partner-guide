@@ -9,11 +9,11 @@ For more information on partnerships feel free to [contact us](mailto:api@hellom
 You have patients that don't yet have a medical marijuana card and want to adquire one.
 
 ## How to process a patient
-1. Redirect your user to https://YOUR_PARTNER_URL.hellomd.ca
+1. Redirect your user to https://YOUR_PARTNER_URL.hellomd.com
 2. We will process the patient and emit the recommendation
 3. The user will be asked to share his/her information with you.
 4. After agreeing to share, the user will be asked to go back to your website with a link to a predefined callback URL to your website. Example: https://example.com/hellomd-callback?user_id=USER_ID
-5. Use our API endpoint to recover that patient's information, at `https://www.hellomd.ca`
+5. Use our API endpoint to recover that patient's information
 
 > Be sure to set the `accept` header to expect `application/json` otherwise you will receive a `406` error.
 
