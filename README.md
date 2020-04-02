@@ -13,7 +13,7 @@ You have patients that don't yet have a medical marijuana card and want to adqui
 2. We will process the patient and emit the recommendation
 3. The user will be asked to share his/her information with you.
 4. After agreeing to share, the user will be asked to go back to your website with a link to a predefined callback URL to your website. Example: https://example.com/hellomd-callback?user_id=USER_ID
-5. Use our API endpoint to recover that patient's information, at `https://www.hellomd.com`
+5. Use our API endpoint to recover that patient's information, at `https://www.hellomd.ca`
 
 > Be sure to set the `accept` header to expect `application/json` otherwise you will receive a `406` error.
 
@@ -22,13 +22,14 @@ Use basic http auth over ssl. ApiKey as username and ApiSecret as password.
 
 ## User API Endpoint
 ```
-GET https://www.hellomd.com/api/v1/users/:id
+GET https://funnel-production.hellomd.io/partner-associations/v1/users/:id
 ```
 This endpoint returns the user recommendation information, if the users has consent to share it with you.
 
 ### Example Request
 ```
-GET https://www.hellomd.com/api/v1/users/55d28c2d6d61636fa90a0000
+GET https://funnel-production.hellomd.io/partner-associations/v1/users/55d28c2d6d61636fa90a0000
+
 ```
 ```javascript
 {
@@ -84,7 +85,7 @@ p preset
 
 Then when redirecting the patient include the preset on the URL, as follows:
 
-https://YOUR_PARTNER_URL.hellomd.com/signup?preset=eyJmaXJzdF9uYW1lIjoiSm9obiIsImxhc3RfbmFtZSI6IlNtaXRoIiwiZW1haWwiOiJqc21pdGhAZXhhbXBsZS5jb20iLCJwaG9uZSI6IjEtOTk5LTk5OS05OTk5IiwiYWRkcmVzc18xIjoiMTAwIDh0aCBTdHJlZXQiLCJhZGRyZXNzXzIiOiJBcHQyMTAiLCJ6aXBjb2RlIjo5NDEwMSwiZ2VuZGVyIjoiTWFsZSJ9
+https://YOUR_PARTNER_URL.hellomd.ca/signup?preset=eyJmaXJzdF9uYW1lIjoiSm9obiIsImxhc3RfbmFtZSI6IlNtaXRoIiwiZW1haWwiOiJqc21pdGhAZXhhbXBsZS5jb20iLCJwaG9uZSI6IjEtOTk5LTk5OS05OTk5IiwiYWRkcmVzc18xIjoiMTAwIDh0aCBTdHJlZXQiLCJhZGRyZXNzXzIiOiJBcHQyMTAiLCJ6aXBjb2RlIjo5NDEwMSwiZ2VuZGVyIjoiTWFsZSJ9
 
 ## How to obtain patient registration information from Hello MD via the API
 Once you receive the `user_id` for a patient, use an HTTP request like the following to obtain all the information given during the patient's registration. For example, using the `Ruby` language and the [http.rb](https://github.com/httprb/http) gem:
@@ -95,6 +96,6 @@ require 'http'
 def get_patient_registration(user_id, key=HELLOMD_KEY, secret=HELLOMD_SECRET)
   HTTP.basic_auth( user: key, pass: secret )
     .headers(:accept => "application/json")
-    .get("https://www.hellomd.com/api/v1/users/#{id}")
+    .get("https://funnel-production.hellomd.io/partner-associations/v1/users/#{id}")
 end
 ```
